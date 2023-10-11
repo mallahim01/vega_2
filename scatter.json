@@ -1,0 +1,88 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 600,
+    "height": 400,
+    "data": {
+      "values": [
+        {"city": "Sydney", "population": 5312163},
+        {"city": "Melbourne", "population": 5078193},
+        {"city": "Brisbane", "population": 2514184},
+        {"city": "Perth", "population": 2059484},
+        {"city": "Adelaide", "population": 1345777},
+        {"city": "Gold Coast", "population": 679127},
+        {"city": "Canberra", "population": 426704},
+        {"city": "Newcastle", "population": 322278},
+        {"city": "Wollongong", "population": 302739},
+        {"city": "Geelong", "population": 263280},
+        {"city": "Hobart", "population": 240342},
+        {"city": "Townsville", "population": 180820},
+        {"city": "Ipswich", "population": 163000},
+        {"city": "Cairns", "population": 152729},
+        {"city": "Toowoomba", "population": 136861},
+        {"city": "Darwin", "population": 136828},
+        {"city": "Ballarat", "population": 105471},
+        {"city": "Bendigo", "population": 99122},
+        {"city": "Launceston", "population": 87328},
+        {"city": "Mackay", "population": 80148},
+        {"city": "Rockhampton", "population": 78592},
+        {"city": "Maitland", "population": 78015},
+        {"city": "Bunbury", "population": 74363},
+        {"city": "Coffs Harbour", "population": 71822},
+        {"city": "Bundaberg", "population": 70921},
+      {"city": "Wagga Wagga", "population": 56442},
+      {"city": "Hervey Bay", "population": 54674},
+      {"city": "Shepparton", "population": 51631},
+      {"city": "Albury", "population": 47974},
+      {"city": "Port Macquarie", "population": 47973},
+      {"city": "Pakenham", "population": 46421},
+      {"city": "Tamworth", "population": 42872},
+      {"city": "Caloundra", "population": 41293},
+      {"city": "Orange", "population": 40493},
+      {"city": "Dubbo", "population": 38392},
+      {"city": "Geraldton", "population": 37648},
+      {"city": "Nowra", "population": 37420},
+      {"city": "Bathurst", "population": 36801},
+      {"city": "Queanbeyan", "population": 36348},
+      {"city": "Frankston", "population": 36097},
+      {"city": "Sunbury", "population": 36084},
+      {"city": "Warrnambool", "population": 35214},
+      {"city": "Wodonga", "population": 35130},
+      {"city": "Albany", "population": 34205},
+      {"city": "Gladstone", "population": 33418},
+      {"city": "Mildura", "population": 32738},
+      {"city": "Southport", "population": 31908},
+      {"city": "Dandenong", "population": 29906},
+      {"city": "Kalgoorlie", "population": 29849}
+      ]
+    },
+    "mark": {
+      "type": "point",
+      "filled": true
+    },
+    "encoding": {
+      "x": {
+        "field": "city",
+        "type": "nominal",
+        "axis": {"labels": false}
+      },
+      "y": {
+        "field": "population",
+        "type": "quantitative",
+        "title": "Population"
+      },
+      "size": {
+        "field": "population",
+        "type": "quantitative",
+        "scale": {"type": "linear", "range": [50, 400]}
+      },
+      "color": {
+        "field": "population",
+        "type": "quantitative",
+        "scale": {"scheme": "viridis"}
+      },
+      "tooltip": [
+        {"field": "city", "title": "City"}
+      ]
+    }
+  }
+  

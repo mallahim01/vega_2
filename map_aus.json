@@ -1,0 +1,23 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 300,
+    "data": {"url": "au.csv"}, 
+  
+    "projection": {"type": "identity"}, 
+  
+    "mark": "circle",
+    "encoding": {
+      "longitude": {"field": "lng", "type": "quantitative"},
+      "latitude": {"field": "lat", "type": "quantitative"},
+      "size": {"field": "population", "type": "quantitative", "scale": {"range": [20, 300]}}, 
+      "color": {
+        "field": "population", 
+        "type": "quantitative", 
+        "scale": {"type": "linear", "range": ["darkred", "yellow"]}
+      }
+    },
+    "config": {"view": {"stroke": "transparent"}
+    }
+  }
+  
