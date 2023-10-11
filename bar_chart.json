@@ -1,0 +1,38 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 300,
+    "data": {"url": "au.csv"}, 
+  
+    "mark": {
+      "type": "bar",
+      "tooltip": true, 
+      "color": "steelblue" 
+    },
+    "encoding": {
+      "x": {
+        "field": "admin_name", 
+        "type": "nominal", 
+        "title": "State"
+      },
+      "y": {
+        "field": "population", 
+        "type": "quantitative", 
+        "aggregate": "sum", 
+        "title": "Population"
+      },
+      "color": {
+        "field": "admin_name", 
+        "type": "nominal"
+      },
+      "tooltip": [
+        {"field": "population", "title": "Population"} 
+      ]
+    },
+    "config": {"view": {"stroke": "transparent"},
+      "axisX": {
+        "labelAngle": 45 
+      }
+    }
+  }
+  

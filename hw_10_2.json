@@ -1,0 +1,20 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 500,
+  "height": 300,
+  "data": {"url": "Australia Address.csv"}, 
+
+  "projection": {"type": "identity"}, 
+
+  "mark": "circle",
+  "encoding": {
+    "longitude": {"field": "lon", "type": "quantitative"},
+    "latitude": {"field": "lat", "type": "quantitative"},
+    
+    "color": {
+      "field": "region"
+    }
+  },
+  "config": {"view": {"stroke": "transparent"}
+  }
+}

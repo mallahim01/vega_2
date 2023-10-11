@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 300,
+    "data": {"url": "Australia Address.csv"}, 
+  
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "region", 
+        "type": "nominal", 
+        "title": "Region"
+      },
+      "y": {
+        "aggregate": "count", 
+        "type": "quantitative",
+        "title": "Number of Addresses"
+      },
+      "color": {
+        "field": "region",
+        "type": "nominal" 
+      }
+    },
+    "config": {
+      "view": {"stroke": "transparent"},
+      "axisX": {
+        "labelAngle": 45 
+      }
+    }
+  }
+  

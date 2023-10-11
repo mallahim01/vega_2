@@ -1,0 +1,99 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Population of Countries",
+    "width": 800,
+    "height": 400,
+    "projection": {
+        "type": "equalEarth"
+    },
+    "layer": [
+        {
+            "data": {
+                "url": "ne_10m_ocean.json",
+                "format": {
+                    "type": "topojson",
+                    "feature": "ne_10m_ocean"
+                }
+            },
+            "mark": {
+                "type": "geoshape",
+                "fill": "skyblue"
+            }
+        },
+        {
+            "data":{
+                "url": "ne_110m_graticules_30.json",
+                "format": {
+                    "type": "topojson",
+                    "feature": "ne_110m_graticules_30"
+                }
+            },
+            "mark": {
+                "type": "geoshape",
+                "fill": null,
+                "stroke": "lightgray"
+            }
+        },
+        {
+            "data": {
+                "url": "ne_110m_admin_0_countries.json",
+                "format":{
+                    "type": "topojson",
+                    "feature": "ne_110m_admin_0_countries"
+                }
+            },
+            "transform": [
+                {
+                    "lookup": "properties.NAME",
+                    "from":{
+                        "data":{
+                            "url": "world_population.csv"
+                        },
+                        "key": "Country/Territory",
+                        "fields": [
+                            "2022 Population"
+                        ]
+                    }
+                }
+            ],
+            "mark": {
+                "type": "geoshape",
+                "stroke": "black",
+                "strokeWidth":0.5
+            },
+            "encoding": {
+                "color":{
+                    "field": "2022 Population",
+                    "type": "quantitative",
+                    "title": "Country Population",
+                    "scale": {
+                        "type": "threshold",
+                        "domain": [
+                            100000,
+                            1000000,
+                            5000000,
+                            10000000,
+                            50000000,
+                            100000000,
+                            500000000,
+                            1000000000,
+                            5000000000
+
+                        ]
+                    }
+                },
+                "tooltip": [
+                    {
+                        "field": "properties.NAME",
+                        "type": "nominal",
+                        "title": "country"
+                    },
+                    {
+                        "field": "2022 Population",
+                        "type": "quantitative"
+                    }
+                ]
+            }
+        }
+    ]
+}
